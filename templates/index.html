@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hello GPT</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/styles.css') }}">
 </head>
 <body>
+<div class="bar">HELLO GPT!</div>
+<div class="space"></div>
+<form method="post">
+    <textarea id="input_text" name="input_text" cols="120" rows="5" placeholder="Enter your prompt here"></textarea>
+    <div class="space"></div>
+    <button id="go" type="submit">>></button>
+    <script>
+        const temp = document.querySelector("#temperature");
+        tempvalue.textContent = temp.value;
+        temperature.addEventListener('input', (event) => {
+            tempvalue.textContent = event.target.value;
+            })
 
+    </script>
+</form>
+{% if prompt_text %}
+<div class="space"></div>
+<div id="output">
+    <div id="prompt-input">{{prompt_text | safe}}</div>
+    <div class="space"></div>
+    <div id="prompt-response">{{ gpt_response_text | safe }}</div>
+</div>
+{% endif %}
+<div class="space"></div>
+<a href="listlogs">listlogs...</a>
+<div id="log"></div>
 </body>
 </html>
