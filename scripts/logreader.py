@@ -20,8 +20,9 @@ def get_log(log_path = r"..\log", last=10):
         f = open(full_path, "r")
         d = json.load(f)
         user_prompt = as_html(f"{d['user_prompt']}")
-        user_prompt = f"<div id='prompt-input'>{user_prompt}</div>"
+        user_prompt = f"<div class='space'></div><div id='prompt-input'>{user_prompt}</div>"
         response = as_html(d['response'])
+        response = f"<div class='space'></div><div id='prompt-response'>{response}</div>"
         yield user_prompt
         yield response
 

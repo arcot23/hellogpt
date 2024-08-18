@@ -11,7 +11,8 @@
 <form method="post">
     <textarea id="input_text" name="input_text" cols="120" rows="5" placeholder="Enter your prompt here"></textarea>
     <div class="space"></div>
-    <button id="go" type="submit">>></button>
+    <button id="go" type="submit">go &raquo;</button>
+    <a href="listlogs">history &raquo;</a>
     <script>
         const temp = document.querySelector("#temperature");
         tempvalue.textContent = temp.value;
@@ -30,7 +31,6 @@
 </div>
 {% endif %}
 <div class="space"></div>
-<a href="listlogs">listlogs...</a>
 <div id="log"></div>
 </body>
 </html>

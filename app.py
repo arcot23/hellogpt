@@ -22,18 +22,15 @@ def process():
     prompt_text = request.form["input_text"]
     system_prompt = "Start the response with a title."
     g = gw(system_prompt=system_prompt)
-    g.create(prompt_text)
+    g.request_text(prompt_text)
 
-    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-    filename = f".\log\{timestamp}-{request.remote_addr.replace('.','_')}.txt"
+    g.dump(request.remote_addr)
 
-    with open(filename, "w") as f:
-        json.dump(g.to_json(), f)
     return render_template('index.html', prompt_text=markdown(g.user_prompt, extras=["fenced-code-blocks"]),
                            gpt_response_text=markdown(g.response, extras=["fenced-code-blocks", "tables"]))
 
 def d():
-    yield from lr.get_log(".\log")
+    yield from lr.get_log(".\log", last=50)
 
 
 @app.route('/stream')
@@ -50,4 +47,4 @@ def stream():
     return Response(generate(), mimetype='text/event-stream')
 
 if __name__ == '__main__':
-    app.run(host="njbedw2", debug=True)
+    app.run(host="njbedw2", port=80, debug=True)

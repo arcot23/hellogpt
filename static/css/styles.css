@@ -30,18 +30,18 @@ body {
 pre {
     font-family: "consolas";
     border: 1px dotted gainsboro;
-    background-color: #FEF8FE  ;
+    background-color: whitesmoke  ;
     font-size: 100%;
-    color: #1111111;
+    color: #512E5F;
     padding: 0.5em;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
 code {
     font-family: "consolas";
-    color: black;
+    color: #512E5F;
     font-size: 100%;
-    background-color: #FEF8FE ;
+    background-color: whitesmoke;
     word-wrap: break-word;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a {
@@ -103,9 +103,15 @@ dd p {
 }
 
 #prompt-input {
-    background-color: #E5E8E8 ;
+    background-color: #76448A;
+    color: white;
     padding: 4px;
-    border-radius: 10px;
+    border: 2px solid #76448A;
+    border-radius: 0px 20px 20px 20px;
+}
+
+#prompt-response {
+    padding: 10px;
 }
 table {
   border-collapse: collapse;
