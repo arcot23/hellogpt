@@ -46,12 +46,20 @@ class gptwrapper:
         return self._gpt_response.choices[0].message.content
 
     @property
+    def model(self):
+        return self._model
+
+    @property
     def user_prompt(self):
         return self._user_prompt
 
     @property
     def system_prompt(self):
         return self._system_prompt
+
+    @property
+    def filepath(self):
+        return self._filepath
 
     def request_text(self, user_prompt):
         self._user_prompt = user_prompt

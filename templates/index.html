@@ -10,6 +10,12 @@
 <div class="space"></div>
 <form method="post">
     <textarea id="input_text" name="input_text" cols="120" rows="5" placeholder="Enter your prompt here"></textarea>
+    <label for="model">Choose a model:</label>
+    <select name="model" id="model">
+        <option value="gpt-4">gpt-4</option>
+        <option value="tts-1">tts-1 (speech)</option>
+        <option value="dall-e-3">dall-e-3 (image)</option>
+    </select>
     <div class="space"></div>
     <button id="go" type="submit">go &raquo;</button>
     <a href="listlogs">history &raquo;</a>
